@@ -2,15 +2,15 @@
     <div class="mr-4 flex-shrink-0">
         <img 
             class="rounded-full mr-4" 
-            src="https://i.pravatar.cc/50" 
+            src="{{ $tweet->user->avatar }}" 
             alt="" 
             srcset=""
         >
     </div>
     <div>
-        <h5 class="font-bold mb-4">John Doe</h5>
+        <h5 class="font-bold mb-4">{{ $tweet->user->name }}</h5>
         <p class="text-sm">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste repellendus nulla amet quaerat, fugit blanditiis rerum nostrum saepe tenetur dolores quasi ducimus earum dicta officiis rem, reprehenderit nesciunt reiciendis ad?
+            {{ $tweet->body }}
         </p>
     </div>
 </div>
