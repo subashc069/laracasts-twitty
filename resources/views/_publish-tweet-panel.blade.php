@@ -7,14 +7,17 @@
             placeholder="What's up doc?"
         ></textarea>
         <hr class="my-4">
-        <footer class="flex justify-between">
+        <footer class="flex justify-between items-center">
             <img 
                 class="rounded-full mr-4" 
                 src="{{ auth()->user()->avatar }}" 
-                alt="your avatar" 
+                alt="your avatar"
+                width="30"
+                height="30"
             >
             <button 
-                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white" type="submit"
+                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white" 
+                type="submit"
             >
                 Tweet-a-roo!
             </button>
