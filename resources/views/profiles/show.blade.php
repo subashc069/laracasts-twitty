@@ -1,6 +1,5 @@
-@extends('layouts.app')
+<x-app>
 
-@section('content')
     <header class="mb-6 relative">
         <div class="relative">
             <img 
@@ -22,15 +21,15 @@
                 <p class="text-sm">Joined {{ $user->created_at->diffForHumans() }}</p>
             </div>
             <div class="flex">
-                <a 
-                    href="" 
-                    class="rounded-full border border-gray-300 py-2 px-4 mr-2 text-black text-xs" 
-                    >
-                    Edit Profile
-                </a>
+                @if (current_user()->is($user))
+                    <a 
+                        href="{{ $user->path('edit') }}" 
+                        class="rounded-full border border-gray-300 py-2 px-4 mr-2 text-black text-xs" 
+                        >
+                        Edit Profile
+                    </a>
+                @endif
                 <x-follow-button :user='$user'></x-follow-button>
-
-                
             </div>
         </div>
         <p class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus doloremque enim suscipit accusantium facere omnis expedita accusamus neque voluptates officia ullam, modi, earum harum quaerat dicta. Dolore odio molestias quod!</p>
@@ -41,4 +40,5 @@
     @include('_timeline', [
         'tweets' => $user->tweets
     ])
-@endsection
+</x-app>
+
