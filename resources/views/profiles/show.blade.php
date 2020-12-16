@@ -37,7 +37,6 @@
         
     </header>
 
-    <hr>
 
     @include('_timeline', [
         'tweets' => $user->tweets
